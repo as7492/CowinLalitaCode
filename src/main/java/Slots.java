@@ -34,7 +34,7 @@ while (true) {
                 for (Object session : sessions) {
                     String cap = ((Map<String, Object>) session).get("available_capacity").toString();
                     String age = ((Map<String, Object>) session).get("min_age_limit").toString();
-                    if (Integer.parseInt(cap) > 0 && Integer.parseInt(age) == 18) {
+                    if (Integer.parseInt(cap) > -1 && Integer.parseInt(age) == 18) {
                         sendMail("capacity-" + ((Map<String, Object>) session).get("available_capacity").toString() + "\ndate-" + ((Map<String, Object>) session).get("date").toString() + "\npin-" + pincode);
                     }
                 }
@@ -84,7 +84,7 @@ while (true) {
 
     public static void sendMail(String content) {
         //from,password,to,subject,message
-       send("lalitamor1994@gmail.com","A@d!ty@m0r","morankita21@gmail.com,lalitamor01@gmail.com,singhanurag66@gmail.com","Vaccine",content);
+       send("lalitamor1994@gmail.com","A@d!ty@m0r","lalitamor01@gmail.com,singhanurag66@gmail.com","Vaccine",content);
         //change from, password and to
     }
 }
