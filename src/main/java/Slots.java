@@ -34,7 +34,7 @@ while (true) {
                 for (Object session : sessions) {
                     String cap = ((Map<String, Object>) session).get("available_capacity").toString();
                     String age = ((Map<String, Object>) session).get("min_age_limit").toString();
-                    if (Integer.parseInt(cap) > -1 && Integer.parseInt(age) == 18) {
+                    if (Integer.parseInt(cap) > 0 && Integer.parseInt(age) == 18) {
                         sendMail("capacity-" + ((Map<String, Object>) session).get("available_capacity").toString() + "\ndate-" + ((Map<String, Object>) session).get("date").toString() + "\npin-" + pincode);
                     }
                 }
